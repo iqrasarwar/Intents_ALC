@@ -23,17 +23,7 @@ public class MainActivity extends AppCompatActivity {
         btn1 = findViewById(R.id.button2);
         b2 = findViewById(R.id.button4);
         b3 = findViewById(R.id.button5);
-        b3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Intent.ACTION_SEND);
-                intent.setType("*/*");
-                intent.putExtra(Intent.EXTRA_EMAIL, address);
-                intent.putExtra(Intent.EXTRA_SUBJECT, subject);
-                if (intent.resolveActivity(getPackageManager()) != null) {
-                    startActivity(intent);
-            }
-        });
+
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -56,6 +46,18 @@ public class MainActivity extends AppCompatActivity {
                 Uri uri = Uri.parse("http://www.google.com");
                 Intent intent = new Intent(Intent.ACTION_VIEW,uri);
                 startActivity(intent);
+            }
+        });
+        b3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.setType("*/*");
+                intent.putExtra(Intent.EXTRA_EMAIL, "bsef19m012@pucit.edu.pk");
+                intent.putExtra(Intent.EXTRA_SUBJECT, "test");
+                if (intent.resolveActivity(getPackageManager()) != null) {
+                    startActivity(intent);
+                }
             }
         });
     }
