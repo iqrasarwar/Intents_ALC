@@ -5,7 +5,7 @@
 * Intents
 * Email intent
 * web view intents
-#### Lecture # 02
+#### Lecture # 02 - 19/05/2022
 
 ### POST MID WEEK # 02
 
