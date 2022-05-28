@@ -2,12 +2,17 @@ package com.example.intents_lec01_postmid;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
+
+//intent is sort of event handling
+//not event but help to trigger events
 
 public class MainActivity extends AppCompatActivity {
 
@@ -51,12 +56,27 @@ public class MainActivity extends AppCompatActivity {
         b3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //action send is to send data from one activity to other
                 Intent intent = new Intent(Intent.ACTION_SEND);
                 intent.setType("*/*");
+                //tell that only email apps will open it
+                intent.setData(Uri.parse("mailto:"));
+                //add email of receiver
                 intent.putExtra(Intent.EXTRA_EMAIL, "bsef19m012@pucit.edu.pk");
+                //add subject of email
                 intent.putExtra(Intent.EXTRA_SUBJECT, "test");
+                //skiping this step will crash the app if no one is present to handle your intent
+                //if an app exist to handle email intent
                 if (intent.resolveActivity(getPackageManager()) != null) {
                     startActivity(intent);
+                }
+                else {
+                    Context context = getApplicationContext();
+                    CharSequence text = "No app to handle email intent!";
+                    int duration = Toast.LENGTH_SHORT;
+
+                    Toast toast = Toast.makeText(context, text, duration);
+                    toast.show();
                 }
             }
         });
