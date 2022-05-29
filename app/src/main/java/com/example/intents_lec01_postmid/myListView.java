@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -14,12 +16,14 @@ public class myListView extends AppCompatActivity {
 
     ArrayList<String> studentList = new ArrayList<String> ();
     ListView listView;
-
+    Button buttonTaskAdd;
+    EditText editTextTask;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_view);
-
+        buttonTaskAdd = findViewById(R.id.button7);
+        editTextTask = findViewById(R.id.editText);
         studentList.add("Saad");
         studentList.add("Zahid");
         studentList.add("Saeed");
@@ -28,5 +32,12 @@ public class myListView extends AppCompatActivity {
                 (this, android.R.layout.simple_list_item_1, studentList);
         listView = findViewById(R.id.listView);
         listView.setAdapter(arrayAdapter);
+        buttonTaskAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                studentList.add(editTextTask.getText().toString());
+                arrayAdapter.notifyDataSetChanged();
+            }
+        });
     }
 }
