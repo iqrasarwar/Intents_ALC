@@ -10,10 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Intents_lec01_POSTMID">
         <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity2"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".myListView"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
