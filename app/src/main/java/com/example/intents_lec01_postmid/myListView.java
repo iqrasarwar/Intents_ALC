@@ -2,6 +2,8 @@ package com.example.intents_lec01_postmid;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -44,10 +46,30 @@ public class myListView extends AppCompatActivity {
                 arrayAdapter.notifyDataSetChanged();
             }
         });
+        //deleteing the items from listview
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 editTextTask.setText("You selected " + studentList.get(i));
+                new AlertDialog.Builder(myListView.this)
+                        .setTitle("Delete Recod")
+                        .setMessage("Do you really want to deete this task!")
+                        .setIcon(R.drawable.ic_launcher_background)
+                        .setCancelable(false)
+                        .setPositiveButton("Delete", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                studentList.remove(i);
+                                arrayAdapter.notifyDataSetChanged();
+                            }
+                        })
+                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        })
+                        .show();
             }
         });
     }
