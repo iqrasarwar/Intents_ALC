@@ -42,8 +42,10 @@ public class myListView extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 studentList.add(editTextTask.getText().toString());
+
                 //to notify chnge to the list to re render
                 arrayAdapter.notifyDataSetChanged();
+                Collections.sort(studentList);
             }
         });
         //deleteing the items from listview

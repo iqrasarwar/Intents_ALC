@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Intents_lec01_POSTMID">
         <activity
+            android:name=".MainActivity3"
+            android:exported="false" />
+        <activity
+            android:name=".customizedListView"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity
