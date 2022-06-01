@@ -21,5 +21,6 @@ public class MainActivity3 extends AppCompatActivity {
         arraylist.add(new Student("mahnoor","4","se19",R.drawable.ic_launcher_background));
         arraylist.add(new Student("mahnoor","5","se19",R.drawable.ic_launcher_background));
         customizedListView list = new customizedListView(this,0,arraylist);
+        listview.setAdapter(list);
     }
 }

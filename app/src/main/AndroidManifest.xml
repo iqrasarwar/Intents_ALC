@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Intents_lec01_POSTMID">
         <activity
-            android:name=".MainActivity3"
+            android:name=".myListView"
             android:exported="false" />
         <activity
             android:name=".customizedListView"
@@ -22,7 +22,7 @@
             android:name=".MainActivity2"
             android:exported="false" />
         <activity
-            android:name=".myListView"
+            android:name=".MainActivity3"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

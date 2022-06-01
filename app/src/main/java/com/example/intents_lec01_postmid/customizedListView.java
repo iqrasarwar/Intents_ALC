@@ -13,6 +13,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class customizedListView extends ArrayAdapter<Student> {
@@ -34,6 +35,7 @@ public class customizedListView extends ArrayAdapter<Student> {
         name.setText(student.getName());
         id.setText(student.getId());
         section.setText(student.getSection());
+        imgview.setImageResource(student.getImgid());
         return convertView;
     }
 }
