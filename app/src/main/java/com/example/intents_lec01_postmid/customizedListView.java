@@ -18,14 +18,18 @@ import java.util.List;
 
 public class customizedListView extends ArrayAdapter<Student> {
 
-    public customizedListView(@NonNull Context context, int resource, @NonNull List<Student> objects) {
-        super(context, resource, objects);
-    }
-    @NonNull
-    @Override
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent)
-    {
-        Student student = getItem(position);
+
+        //right click , 2nd last option
+    public customizedListView(@NonNull Context context, int resource,
+                            @NonNull List<Student> objects) {
+            super(context, resource, objects);
+        }
+
+        //right click, generate, getItem(,,) method
+        @NonNull
+        @Override
+        public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+        Student student =  getItem(position);
         convertView = LayoutInflater.from(getContext()).inflate(R.layout.student_view,parent,
                 false);
         TextView name = convertView.findViewById(R.id.textView);
