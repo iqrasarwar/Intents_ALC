@@ -15,7 +15,7 @@
 
 #### Lecture # 03 - 24/05/2022
 * Evaluation of assignment # 01 
-* List View
+* List View via adapter
 
 #### Lecture # 04 - 26/05/2022
 * paper show
