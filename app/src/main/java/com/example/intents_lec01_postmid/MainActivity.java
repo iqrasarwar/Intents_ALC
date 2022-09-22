@@ -115,4 +115,10 @@ public class MainActivity extends AppCompatActivity {
         super.onRestart();
         Log.d("acl1","onrestart");
     }
+    @Override
+    protected  void onDestroy()
+    {
+        super.onDestroy();
+        Log.d("acl1","onDestroy");
+    }
 }

@@ -10,7 +10,6 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity2 extends AppCompatActivity {
-
     Button btn;
     TextView t;
     @Override
@@ -36,6 +35,12 @@ public class MainActivity2 extends AppCompatActivity {
     {
         super.onStart();
         Log.d("acl1","onstart2");
+    }
+    @Override
+    protected  void onDestroy()
+    {
+        super.onDestroy();
+        Log.d("acl1","ondestroy1");
     }
 
     @Override
