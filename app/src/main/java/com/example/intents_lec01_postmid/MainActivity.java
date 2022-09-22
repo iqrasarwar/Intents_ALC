@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //action send is to send data from one activity to other
-                Intent intent = new Intent(Intent.ACTION_SEND);
+                Intent intent = new Intent(Intent.ACTION_SENDTO);
                 intent.setType("*/*");
                 //tell that only email apps will open it
                 intent.setData(Uri.parse("mailto:"));
